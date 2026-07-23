@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#092609" />
+    <meta
+      name="description"
+      content="Elmayı yakala, yılanı büyüt ve kendi izine ya da duvarlara çarpmadan ilerle."
+    />
+    <title>Snake</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="game.js" defer></script>
+  </head>
+  <body>
+    <main class="game-shell">
+      <header class="game-header">
+        <div>
+          <span class="eyebrow">Pygame’den web oyununa</span>
+          <h1>Snake</h1>
+        </div>
+        <div class="header-actions">
+          <button class="utility-button help-button" id="helpButton" type="button">Yardım</button>
+          <button class="utility-button" id="soundButton" type="button" aria-pressed="true">
+            Ses açık
+          </button>
+        </div>
+      </header>
+
+      <div class="game-layout">
+        <section class="stage-card" aria-label="Snake oyun alanı">
+          <canvas id="gameCanvas" width="600" height="600">
+            Tarayıcınız canvas özelliğini desteklemiyor.
+          </canvas>
+
+          <div class="game-overlay is-visible" id="gameOverlay" role="dialog" aria-modal="true">
+            <section class="overlay-panel" aria-labelledby="overlayTitle">
+              <span class="overlay-kicker">Nasıl oynanır?</span>
+              <h2 id="overlayTitle">Yılanı büyüt</h2>
+              <div class="overlay-text" id="overlayText">
+                <p>Yılanı kırmızı elmaya yönlendir; her elma skoru ve gövde uzunluğunu artırır.</p>
+                <ul>
+                  <li><strong>Hareket:</strong> Ok tuşları, WASD, kaydırma veya yön düğmeleri.</li>
+                  <li><strong>Elma:</strong> Bir puan kazandırır ve yılanı bir kare uzatır.</li>
+                  <li><strong>Çarpışma:</strong> Duvara ya da kendi gövdene değersen tur biter.</li>
+                  <li><strong>Hedef:</strong> Alan daralmadan mümkün olan en uzun yılanı oluştur.</li>
+                </ul>
+              </div>
+              <button class="primary-button" id="startButton" type="button">Oyuna başla</button>
+            </section>
+          </div>
+        </section>
+
+        <section class="controls" aria-label="Yılan hareket kontrolleri">
+          <button class="up" type="button" data-direction="up" aria-label="Yukarı">↑</button>
+          <button class="left" type="button" data-direction="left" aria-label="Sol">←</button>
+          <button class="down" type="button" data-direction="down" aria-label="Aşağı">↓</button>
+          <button class="right" type="button" data-direction="right" aria-label="Sağ">→</button>
+        </section>
+      </div>
+
+      <footer class="game-footer">
+        <span>Ok tuşları / WASD</span>
+        <span>Mobilde kaydır veya yön düğmelerini kullan</span>
+      </footer>
+    </main>
+  </body>
+</html>
